@@ -2,7 +2,6 @@ export class Utilities {
   constructor() {
     this.width = $(".left-side").innerWidth();
     this.left = false;
-    console.log("uuuuuuuuuuuuuuuuuuuuu");
     this.navbarOpenClose();
 
     this.navbarLinks();
@@ -13,7 +12,6 @@ export class Utilities {
       $(sec).show().siblings().hide();
     });
     $(".links li").click(() => {
-      console.log(this);
       this.navClose(this.width);
     });
   }
@@ -28,7 +26,6 @@ export class Utilities {
   }
   spinnerShow() {
     $(document).ready(() => {
-      console.log("sssssssssssssss");
       $(".outer-spinner").fadeIn(500);
     });
   }

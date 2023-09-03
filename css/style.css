@@ -53,7 +53,8 @@ i {
   transition: top 500ms;
 }
 
-.meal-box {
+.meal-box,
+.area {
   cursor: pointer;
 }
 
@@ -91,7 +92,7 @@ i {
 
 .outer-spinner {
   position: fixed;
-  background-color: tomato;
+  background-color: var(--color-primary);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -109,7 +110,7 @@ i {
 
 .inner-spinner {
   position: absolute;
-  background-color: tomato;
+  background-color: var(--color-primary);
   min-height: 100vh;
   inset: 0;
   display: flex;

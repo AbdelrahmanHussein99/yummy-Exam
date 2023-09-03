@@ -1,13 +1,11 @@
 export class Display {
   constructor() {
     this.mealsShow = document.querySelectorAll("#mealsShow");
-    console.log(this.mealsShow);
     this.recipeDetails = document.getElementById("recipeDetails");
     this.mealsShowEvent();
   }
   mealsShowEvent() {
     let row = [...this.mealsShow];
-    console.log(this);
     row.forEach((el) => {
       el.addEventListener("click", this.getIdMealDetails.bind(this));
     });
@@ -31,9 +29,8 @@ export class Display {
     el.innerHTML = box;
   }
   getIdMealDetails(e) {
-    const id = e.target.dataset.id;
+    let id = e.target.dataset.id;
     if (id !== undefined) {
-      console.log(id);
       this.getMealDetails(id);
     }
   }
@@ -46,7 +43,6 @@ export class Display {
       const res = await fetch(url);
       if (!res.ok) throw new Error("Falied to fatch API");
       const data = await res.json();
-      console.log(data.meals[0]["strIngredient" + "1"]);
 
       this.displayMealInstructions(data.meals[0]);
     } catch (err) {
@@ -70,7 +66,6 @@ export class Display {
     if (data.strTags !== null) {
       tagsArr = data.strTags?.split(",");
     }
-    console.log(tagsArr);
     for (let i = 0; i < tagsArr.length; i++) {
       recipeTags += `
       <li class="p-1 m-2 alert alert-danger">${tagsArr[i]}</li>`;
@@ -113,6 +108,6 @@ export class Display {
           </div>
         </div>
     `;
-    console.log(recipeInstructions);
+    $("#mealInstructions").siblings().hide();
   }
 }

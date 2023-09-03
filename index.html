@@ -21,11 +21,11 @@
   <nav class="d-flex side-navbar py-0 vh-100 px-0 position-fixed top-0 ">
     <div class="p-4 h-100 d-flex flex-column justify-content-between left-side ">
       <ul class="list-unstyled d-flex gap-1 flex-column overflow-hidden position-relative    links text-white">
-        <li class="py-2 text-white" data="#search">Search</li>
-        <li class="py-2 text-white" data="#categories">Categories</li>
-        <li class="py-2 text-white" data="#area">Area</li>
-        <li class="py-2 text-white" data="#instructions">Ingredients</li>
-        <li class="py-2 text-white" data="#contact">Contact Us</li>
+        <li class="py-2 text-white" id="searchBtn" data="#search">Search</li>
+        <li class="py-2 text-white" id="categoriesBtn" data="#categories">Categories</li>
+        <li class="py-2 text-white" id="areaBtn" data="#area">Area</li>
+        <li class="py-2 text-white" id="instructionsBtn" data="#instructions">Ingredients</li>
+        <li class="py-2 text-white" id="contactBtn" data="#contact">Contact Us</li>
       </ul>
       <div class="text-white ">
         <ul class="list-unstyled d-flex gap-1 mb-0">
@@ -39,7 +39,7 @@
     <div class="py-4 px-2 bg-white d-flex flex-column justify-content-between text-center h-100  right-side ">
       <img src="./imgs/logo.png" alt="logo pic" class="">
       <button id="openBtn" class="btn text-black" type="button"><i class="fa-solid fa-bars fa-2xl"></i></button>
-      <ul class="list-unstyled d-flex gap-1 flex-column mb-0 ">
+      <ul class="list-unstyled d-flex gap-1 text-black flex-column mb-0 ">
         <li class="mb-0"><i class="fa-solid fa-globe"></i></li>
         <li><i class="fa-solid fa-share-nodes"></i></li>
       </ul>
@@ -48,22 +48,6 @@
   <section id="someMeals" class="py-5">
     <div class="container">
       <div id="mealsShow" class="row meals  gy-4">
-      </div>
-    </div>
-  </section>
-  <section id="categories" class="py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-md-3">
-          <div class="rounded-3 overflow-hidden  meal-box position-relative" onclick="">
-            <img src="./imgs/58oia61564916529.jpg" alt="" class="w-100 rounded-2">
-            <div
-              class=" layer h-100 d-flex py-2 px-1 align-items-center flex-column justify-content-center w-100 rounded-2 text-center text-black">
-              <h2>lorem</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quidem omnis tenetur! Quibus</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -99,31 +83,36 @@
 
     </div>
   </section>
+  <!-- categories -->
+  <section id="categories" class="py-5">
+    <div class="container position-relative">
+      <div class="inner-spinner" style="display: none;">
+        <span><i class="fa-solid fa-spinner fa-spin "></i></span>
+      </div>
+      <div id="mealsShow" class="row meals gy-4">
+
+      </div>
+    </div>
+  </section>
   <!-- area -->
   <section id="area" class="py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-md-3">
-          <div class="rounded-3 area text-center ">
-            <i class="fa-solid fa-house-laptop icon-home mb-2"></i>
-            <h2>American</h2>
-          </div>
-        </div>
+    <div class="container position-relative">
+      <div class="inner-spinner" style="display: none;">
+        <span><i class="fa-solid fa-spinner fa-spin "></i></span>
+      </div>
+      <div id="mealsShow" class="row meals gy-4">
+
       </div>
     </div>
   </section>
   <!--instructions  -->
   <section id="instructions" class="py-5">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-md-3">
-          <div class="rounded-3 area text-center ">
-            <i class="fa-solid fa-drumstick-bite icon-home mb-2"></i>
-            <h2>chicken</h2>
-            <p>The chicken is a type of domesticated fowl, a subspecies of the red junglefowl (Gallus gallus). It is one
-              of</p>
-          </div>
-        </div>
+    <div class="container position-relative">
+      <div class="inner-spinner" style="display: none;">
+        <span><i class="fa-solid fa-spinner fa-spin "></i></span>
+      </div>
+      <div id="mealsShow" class="row meals gy-4">
+
       </div>
     </div>
   </section>

@@ -1,7 +1,12 @@
 import { Utilities } from "./Utilities.module.js";
 import { Meals } from "./Meals.module.js";
 import { Search } from "./Search.module.js";
+import { Categories } from "./categories.module.js";
+import { Area } from "./Area.module.js";
+import { Instructions } from "./Instructions.module.js";
+new Instructions();
+new Area();
+new Categories();
 new Search();
 new Meals();
-
 new Utilities();
