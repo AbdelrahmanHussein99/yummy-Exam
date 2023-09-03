@@ -4,6 +4,7 @@ export class Meals extends Display {
     super();
     this.getMeals();
   }
+
   async getMeals() {
     try {
       $(".outer-spinner").fadeIn(300);

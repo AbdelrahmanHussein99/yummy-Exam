@@ -8,6 +8,8 @@ export class Area extends Display {
     this.areaBtnEl.addEventListener("click", this.getAreaData.bind(this));
     this.areaShowEvent();
   }
+  // get areas api data
+
   async getAreaData() {
     try {
       $(".inner-spinner").fadeIn(500);
@@ -15,6 +17,7 @@ export class Area extends Display {
       const res = await fetch(url);
       if (!res.ok) throw new Error("Falied to fatch API");
       const data = await res.json();
+      // send data and location to displat module
       this.displayArea(data.meals, "#area #mealsShow");
     } catch (err) {
       $(".meals").html(`<p class="err-pag">${err}</p>`);
@@ -23,6 +26,8 @@ export class Area extends Display {
       $(".inner-spinner").fadeOut(500);
     }
   }
+  // display areas api data
+
   displayArea(data, location) {
     let box = ``;
     data.forEach((el) => {
@@ -37,6 +42,9 @@ export class Area extends Display {
     let el = document.querySelector(`${location}`);
     el.innerHTML = box;
   }
+
+  // addEventListener to parent and target children
+
   areaShowEvent() {
     let row = [...this.mealsShowEl];
     row.forEach((el) => {
@@ -49,6 +57,9 @@ export class Area extends Display {
       this.getAreaMeals(areaName);
     }
   }
+
+  // get clicked area api data
+
   async getAreaMeals(areaName) {
     try {
       $(".inner-spinner").fadeIn(500);
@@ -56,6 +67,7 @@ export class Area extends Display {
       const res = await fetch(url);
       if (!res.ok) throw new Error("Falied to fatch API");
       const data = await res.json();
+      // send data and location to displat module
       this.displayMeals(data.meals, "#area #mealsShow");
     } catch (err) {
       $(".meals").html(`<p class="err-pag">${err}</p>`);

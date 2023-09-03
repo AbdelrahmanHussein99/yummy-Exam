@@ -8,10 +8,12 @@ export class Search extends Display {
     this.searchNameEL.addEventListener("keyup", this.getWord.bind(this));
     this.searchLetterEl.addEventListener("keyup", this.getLetter.bind(this));
   }
+
   getWord() {
     let word = this.searchNameEL.value;
     this.getSearchNdata(word);
   }
+
   async getSearchNdata(word) {
     try {
       $(".inner-spinner").fadeIn(500);
@@ -27,6 +29,7 @@ export class Search extends Display {
       $(".inner-spinner").fadeOut(500);
     }
   }
+
   getLetter() {
     let letter = this.searchLetterEl.value;
     this.getSearchLdata(letter);
@@ -40,6 +43,7 @@ export class Search extends Display {
       const res = await fetch(url);
       if (!res.ok) throw new Error("Falied to fatch API");
       const data = await res.json();
+      // send data and location to displat module
       this.displayMeals(data.meals, "#search #mealsShow");
     } catch (err) {
       $(".meals").html(`<p class="err-pag">${err}</p>`);

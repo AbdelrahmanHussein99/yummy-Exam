@@ -1,10 +1,10 @@
+/* global style =================== */
 :root {
   /* colors */
   --color-primary: #0d0d0d;
   --bs-btn-active-border-color: #fff;
   /* fonts */
   --ff-primary: 'Roboto', sans-serif;
-
 }
 
 body {
@@ -17,6 +17,7 @@ i {
   cursor: pointer;
 }
 
+/* navbar =================== */
 .side-navbar {
   left: -258px;
   z-index: 999;
@@ -43,7 +44,7 @@ i {
 
 }
 
-
+/* meal =================== */
 .layer {
   background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
@@ -62,6 +63,7 @@ i {
   top: 0;
 }
 
+/* search =================== */
 #sreachForm input::placeholder {
   color: rgba(255, 255, 255, 0.446) !important;
 }
@@ -70,21 +72,19 @@ i {
   color: white !important;
 }
 
+/* area =================== */
 .icon-home {
   font-size: 64px;
 }
 
-
-
-
-
-
+/* error api p =================== */
 .err-pag {
   color: red;
   text-align: center;
   font-weight: bold;
 }
 
+/* spinners =================== */
 .outer-spinner i,
 .inner-spinner i {
   font-size: 80px;
@@ -119,16 +119,6 @@ i {
   z-index: 99;
 }
 
-/* .loader {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 10px dotted;
-  border-color: white white white transparent;
-  display: inline-block;
-  animation: spin 0.75s linear infinite;
-  animation: mltShdSpin 1.7s infinite ease, round 1.7s infinite ease;
-} */
 
 #categories,
 #mealInstructions,

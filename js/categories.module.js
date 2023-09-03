@@ -50,6 +50,7 @@ export class Categories extends Display {
     let el = document.querySelector(`${location}`);
     el.innerHTML = box;
   }
+
   categShowEvent() {
     let row = [...this.mealsShowEl];
     row.forEach((el) => {
@@ -62,6 +63,7 @@ export class Categories extends Display {
       this.getCategMeals(catName);
     }
   }
+
   async getCategMeals(catName) {
     try {
       $(".inner-spinner").fadeIn(500);
@@ -69,7 +71,6 @@ export class Categories extends Display {
       const res = await fetch(url);
       if (!res.ok) throw new Error("Falied to fatch API");
       const data = await res.json();
-
       this.displayMeals(data.meals, "#categories #mealsShow");
     } catch (err) {
       $(".meals").html(`<p class="err-pag">${err}</p>`);

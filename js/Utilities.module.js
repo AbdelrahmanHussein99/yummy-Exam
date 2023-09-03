@@ -3,9 +3,9 @@ export class Utilities {
     this.width = $(".left-side").innerWidth();
     this.left = false;
     this.navbarOpenClose();
-
     this.navbarLinks();
   }
+  // show clicked  section and hide other section and close navbar
   navbarLinks() {
     $(".links li").click(function () {
       const sec = $(this).attr("data");
@@ -15,6 +15,7 @@ export class Utilities {
       this.navClose(this.width);
     });
   }
+
   navbarOpenClose() {
     $("#openBtn").click(() => {
       if (this.left) {
@@ -24,14 +25,8 @@ export class Utilities {
       }
     });
   }
-  spinnerShow() {
-    $(document).ready(() => {
-      $(".outer-spinner").fadeIn(500);
-    });
-  }
-  spinnerHide() {
-    $(".outer-spinner").fadeOut(500);
-  }
+
+  // outer spinner loading
   navClose(width) {
     $("#openBtn i").attr("class", "fa-solid fa-bars fa-2xl");
     $(".side-navbar").animate({ left: `-${width}px` }, 500);

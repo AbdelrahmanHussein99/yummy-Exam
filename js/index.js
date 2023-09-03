@@ -13,5 +13,3 @@ new Categories();
 new Area();
 new Instructions();
 new Contant();
-let reg = /^\w{3,16}$/;
-console.log(reg.test("sss"));

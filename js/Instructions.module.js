@@ -11,6 +11,7 @@ export class Instructions extends Display {
     );
     this.instrShowEvent();
   }
+
   async getInstrData() {
     try {
       $(".inner-spinner").fadeIn(500);
@@ -26,6 +27,7 @@ export class Instructions extends Display {
       $(".inner-spinner").fadeOut(500);
     }
   }
+
   displayInstr(data, location) {
     let box = ``;
     data.forEach((el) => {
@@ -49,6 +51,7 @@ export class Instructions extends Display {
     let el = document.querySelector(`${location}`);
     el.innerHTML = box;
   }
+
   instrShowEvent() {
     let row = [...this.mealsShowEl];
     row.forEach((el) => {
@@ -61,6 +64,7 @@ export class Instructions extends Display {
       this.getInstrMeals(instrName);
     }
   }
+
   async getInstrMeals(instrName) {
     try {
       $(".inner-spinner").fadeIn(500);

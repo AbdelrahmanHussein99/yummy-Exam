@@ -4,12 +4,8 @@ export class Display {
     this.recipeDetails = document.getElementById("recipeDetails");
     this.mealsShowEvent();
   }
-  mealsShowEvent() {
-    let row = [...this.mealsShowEl];
-    row.forEach((el) => {
-      el.addEventListener("click", this.getIdMealDetails.bind(this));
-    });
-  }
+
+  // display data for meals
   displayMeals(data, location) {
     data ? data : (data = []);
     let box = ``;
@@ -28,12 +24,22 @@ export class Display {
     let el = document.querySelector(`${location}`);
     el.innerHTML = box;
   }
+
+  // addEventListener to parent and target children
+
+  mealsShowEvent() {
+    let row = [...this.mealsShowEl];
+    row.forEach((el) => {
+      el.addEventListener("click", this.getIdMealDetails.bind(this));
+    });
+  }
   getIdMealDetails(e) {
     let id = e.target.dataset.id;
     if (id !== undefined) {
       this.getMealDetails(id);
     }
   }
+  // get data for one meal
   async getMealDetails(id) {
     try {
       $(".inner-spinner").fadeIn(500);
@@ -52,6 +58,9 @@ export class Display {
       $(".inner-spinner").fadeOut(500);
     }
   }
+
+  // display data for one meal
+
   displayMealInstructions(data) {
     let recipeInstructions = ``;
     let recipeTags = ``;
