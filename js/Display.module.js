@@ -1,11 +1,11 @@
 export class Display {
   constructor() {
-    this.mealsShow = document.querySelectorAll("#mealsShow");
+    this.mealsShowEl = document.querySelectorAll("#mealsShow");
     this.recipeDetails = document.getElementById("recipeDetails");
     this.mealsShowEvent();
   }
   mealsShowEvent() {
-    let row = [...this.mealsShow];
+    let row = [...this.mealsShowEl];
     row.forEach((el) => {
       el.addEventListener("click", this.getIdMealDetails.bind(this));
     });

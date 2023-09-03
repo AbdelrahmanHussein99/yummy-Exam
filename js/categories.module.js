@@ -3,7 +3,7 @@ import { Display } from "./Display.module.js";
 export class Categories extends Display {
   constructor() {
     super();
-    this.mealsShow = document.querySelectorAll("#mealsShow");
+    this.mealsShowEl = document.querySelectorAll("#mealsShow");
     this.categoriesBtnEl = document.getElementById("categoriesBtn");
     this.categoriesBtnEl.addEventListener(
       "click",
@@ -19,7 +19,6 @@ export class Categories extends Display {
       if (!res.ok) throw new Error("Falied to fatch API");
       const data = await res.json();
       this.displayCateg(data.categories, "#categories #mealsShow");
-      // this.displayMeals(data.meals, "#search #mealsShow");
     } catch (err) {
       $(".meals").html(`<p class="err-pag">${err}</p>`);
       console.error(err);
@@ -52,7 +51,7 @@ export class Categories extends Display {
     el.innerHTML = box;
   }
   categShowEvent() {
-    let row = [...this.mealsShow];
+    let row = [...this.mealsShowEl];
     row.forEach((el) => {
       el.addEventListener("click", this.getNCategDetails.bind(this));
     });

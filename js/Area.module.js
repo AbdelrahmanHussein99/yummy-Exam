@@ -3,7 +3,7 @@ import { Display } from "./Display.module.js";
 export class Area extends Display {
   constructor() {
     super();
-    this.mealsShow = document.querySelectorAll("#mealsShow");
+    this.mealsShowEl = document.querySelectorAll("#mealsShow");
     this.areaBtnEl = document.getElementById("areaBtn");
     this.areaBtnEl.addEventListener("click", this.getAreaData.bind(this));
     this.areaShowEvent();
@@ -38,7 +38,7 @@ export class Area extends Display {
     el.innerHTML = box;
   }
   areaShowEvent() {
-    let row = [...this.mealsShow];
+    let row = [...this.mealsShowEl];
     row.forEach((el) => {
       el.addEventListener("click", this.getNAreaDetails.bind(this));
     });

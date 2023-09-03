@@ -3,7 +3,7 @@ import { Display } from "./Display.module.js";
 export class Instructions extends Display {
   constructor() {
     super();
-    this.mealsShow = document.querySelectorAll("#mealsShow");
+    this.mealsShowEl = document.querySelectorAll("#mealsShow");
     this.instructionsBtnEl = document.getElementById("instructionsBtn");
     this.instructionsBtnEl.addEventListener(
       "click",
@@ -50,7 +50,7 @@ export class Instructions extends Display {
     el.innerHTML = box;
   }
   instrShowEvent() {
-    let row = [...this.mealsShow];
+    let row = [...this.mealsShowEl];
     row.forEach((el) => {
       el.addEventListener("click", this.getNInstrDetails.bind(this));
     });
