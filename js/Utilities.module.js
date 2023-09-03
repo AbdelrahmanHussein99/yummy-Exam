@@ -8,11 +8,13 @@ export class Utilities {
     this.navbarLinks();
   }
   navbarLinks() {
-    $(".links li a").click(function () {
-      const sec = $(this).attr("href");
+    $(".links li").click(function () {
+      const sec = $(this).attr("data");
       $(sec).show().siblings().hide();
-
-      console.log(sec);
+    });
+    $(".links li").click(() => {
+      console.log(this);
+      this.navClose(this.width);
     });
   }
   navbarOpenClose() {

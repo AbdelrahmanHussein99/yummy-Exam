@@ -9,13 +9,13 @@ export class Spinner {
   spinnerHide() {
     $(".outer-spinner").fadeOut(500);
   }
-  spinnerInnerShow() {
-    $(document).ready(() => {
-      console.log("sssssssssssssss");
-      $(".inner-spinner").fadeIn(500);
-    });
-  }
-  spinnerInnerHide() {
-    $(".inner-spinner").fadeOut(500);
-  }
+  // spinnerInnerShow() {
+  //   $("#search #mealsShow").ready(() => {
+  //     console.log("sssssssssssssss");
+  //     $(".inner-spinner").fadeIn(500);
+  //   });
+  // }
+  // spinnerInnerHide() {
+  //   $(".inner-spinner").fadeOut(500);
+  // }
 }

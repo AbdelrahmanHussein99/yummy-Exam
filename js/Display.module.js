@@ -1,15 +1,19 @@
-import { Spinner } from "./Spinner.module.js";
-
-export class Display extends Spinner {
+export class Display {
   constructor() {
-    super();
-    this.mealsShow = document.getElementById("mealsShow");
+    this.mealsShow = document.querySelectorAll("#mealsShow");
+    console.log(this.mealsShow);
     this.recipeDetails = document.getElementById("recipeDetails");
-    this.mealsShow.addEventListener("click", this.getIdMealDetails.bind(this));
-    this.errorParg = document.createElement("p");
+    this.mealsShowEvent();
   }
-
-  displayMeals(data) {
+  mealsShowEvent() {
+    let row = [...this.mealsShow];
+    console.log(this);
+    row.forEach((el) => {
+      el.addEventListener("click", this.getIdMealDetails.bind(this));
+    });
+  }
+  displayMeals(data, location) {
+    data ? data : (data = []);
     let box = ``;
     data.forEach((el) => {
       box += `
@@ -23,7 +27,8 @@ export class Display extends Spinner {
         </div>
       `;
     });
-    this.mealsShow.innerHTML = box;
+    let el = document.querySelector(`${location}`);
+    el.innerHTML = box;
   }
   getIdMealDetails(e) {
     const id = e.target.dataset.id;
@@ -34,24 +39,21 @@ export class Display extends Spinner {
   }
   async getMealDetails(id) {
     try {
-      this.spinnerShow();
+      $(".inner-spinner").fadeIn(500);
       $("#someMeals").hide();
       $("#mealInstructions").show();
       const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
       const res = await fetch(url);
       if (!res.ok) throw new Error("Falied to fatch API");
       const data = await res.json();
-      // displayMealInstructions();
       console.log(data.meals[0]["strIngredient" + "1"]);
 
       this.displayMealInstructions(data.meals[0]);
     } catch (err) {
-      this.errorParg.innerText = err;
-      this.errorParg.setAttribute("class", "err-pag");
-      this.recipeDetails.append(this.errorParg);
+      $(".meals").html(`<p class="err-pag">${err}</p>`);
       console.error(err);
     } finally {
-      this.spinnerHide();
+      $(".inner-spinner").fadeOut(500);
     }
   }
   displayMealInstructions(data) {

@@ -15,17 +15,17 @@
 </head>
 
 <body>
-  <div class="outer-spinner ">
-    <span class="loader"></span>
+  <div class="outer-spinner" style="display: none;">
+    <i class="fa-solid fa-spinner fa-spin "></i>
   </div>
   <nav class="d-flex side-navbar py-0 vh-100 px-0 position-fixed top-0 ">
     <div class="p-4 h-100 d-flex flex-column justify-content-between left-side ">
       <ul class="list-unstyled d-flex gap-1 flex-column overflow-hidden position-relative    links text-white">
-        <li class="py-2"><a class="text-decoration-none text-white " href="#search">Search</a></li>
-        <li class="py-2"><a class="text-decoration-none text-white " href="#categories">Categories</a></li>
-        <li class="py-2"><a class="text-decoration-none text-white " href="#area">Area</a></li>
-        <li class="py-2"><a class="text-decoration-none text-white " href="#instructions">Ingredients</a></li>
-        <li class="py-2"><a class="text-decoration-none text-white " href="#contact">Contact Us</a></li>
+        <li class="py-2 text-white" data="#search">Search</li>
+        <li class="py-2 text-white" data="#categories">Categories</li>
+        <li class="py-2 text-white" data="#area">Area</li>
+        <li class="py-2 text-white" data="#instructions">Ingredients</li>
+        <li class="py-2 text-white" data="#contact">Contact Us</li>
       </ul>
       <div class="text-white ">
         <ul class="list-unstyled d-flex gap-1 mb-0">
@@ -48,7 +48,6 @@
   <section id="someMeals" class="py-5">
     <div class="container">
       <div id="mealsShow" class="row meals  gy-4">
-
       </div>
     </div>
   </section>
@@ -70,15 +69,18 @@
   </section>
   <!--mealInstructions  -->
   <section class="py-5" id="mealInstructions">
-    <div class="container">
-      <div class="row gy-4" id="recipeDetails">
+    <div class="container position-relative">
+      <div class="inner-spinner" style="display: none;">
+        <span><i class="fa-solid fa-spinner fa-spin "></i></span>
+      </div>
+      <div class="row gy-4 meals" id="recipeDetails">
       </div>
     </div>
   </section>
   <!-- search -->
   <section id="search" class="py-5">
     <div class="container ">
-      <form class="row" id='sreachForm'>
+      <form class="row mb-4" id='sreachForm'>
         <div class="col-md-6">
           <input id="searchName" type="text" class="form-control bg-transparent" placeholder="Search By Name">
         </div>
@@ -87,11 +89,14 @@
             placeholder="Search By First Letter">
         </div>
       </form>
-      <div id="mealsShow" class="row meals position-relative  gy-4">
-        <div class="inner-spinner ">
-          <span class="loader"></span>
+      <div class="position-relative mt-4">
+        <div class="inner-spinner" style="display: none;">
+          <span><i class="fa-solid fa-spinner fa-spin "></i></span>
+        </div>
+        <div id="mealsShow" class="row meals   gy-4">
         </div>
       </div>
+
     </div>
   </section>
   <!-- area -->
@@ -122,8 +127,8 @@
       </div>
     </div>
   </section>
-  <section id="contact" class="py-5 vh-100 d-flex justify-content-center align-items-center d-none">
-    <div class="container">
+  <section id="contact" class="py-5 vh-100  ">
+    <div class="container d-flex justify-content-center align-items-center">
       <form class="row gy-4">
         <div class="col-md-6">
           <input id="userName" type="text" class="form-control mb-3" placeholder="Enter Your Name">
