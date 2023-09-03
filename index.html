@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <title>Yummy</title>
+  <link rel="icon" href="imgs/logo.png">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="outer-spinner ">
+    <span class="loader"></span>
+  </div>
+  <nav class="d-flex side-navbar py-0 vh-100 px-0 position-fixed top-0 ">
+    <div class="p-4 h-100 d-flex flex-column justify-content-between left-side ">
+      <ul class="list-unstyled d-flex gap-1 flex-column overflow-hidden position-relative    links text-white">
+        <li class="py-2"><a class="text-decoration-none text-white " href="#search">Search</a></li>
+        <li class="py-2"><a class="text-decoration-none text-white " href="#categories">Categories</a></li>
+        <li class="py-2"><a class="text-decoration-none text-white " href="#area">Area</a></li>
+        <li class="py-2"><a class="text-decoration-none text-white " href="#instructions">Ingredients</a></li>
+        <li class="py-2"><a class="text-decoration-none text-white " href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="text-white ">
+        <ul class="list-unstyled d-flex gap-1 mb-0">
+          <li><i class="fa-brands fa-facebook"></i></li>
+          <li><i class="fa-brands fa-twitter"></i></li>
+          <li><i class="fa-solid fa-globe"></i></li>
+        </ul>
+        <p>Copyright Â© 2019 All Rights Reserved.</p>
+      </div>
+    </div>
+    <div class="py-4 px-2 bg-white d-flex flex-column justify-content-between text-center h-100  right-side ">
+      <img src="./imgs/logo.png" alt="logo pic" class="">
+      <button id="openBtn" class="btn text-black" type="button"><i class="fa-solid fa-bars fa-2xl"></i></button>
+      <ul class="list-unstyled d-flex gap-1 flex-column mb-0 ">
+        <li class="mb-0"><i class="fa-solid fa-globe"></i></li>
+        <li><i class="fa-solid fa-share-nodes"></i></li>
+      </ul>
+    </div>
+  </nav>
+  <section id="someMeals" class="py-5">
+    <div class="container">
+      <div id="mealsShow" class="row meals  gy-4">
+
+      </div>
+    </div>
+  </section>
+  <section id="categories" class="py-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-3">
+          <div class="rounded-3 overflow-hidden  meal-box position-relative" onclick="">
+            <img src="./imgs/58oia61564916529.jpg" alt="" class="w-100 rounded-2">
+            <div
+              class=" layer h-100 d-flex py-2 px-1 align-items-center flex-column justify-content-center w-100 rounded-2 text-center text-black">
+              <h2>lorem</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quidem omnis tenetur! Quibus</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--mealInstructions  -->
+  <section class="py-5" id="mealInstructions">
+    <div class="container">
+      <div class="row gy-4" id="recipeDetails">
+      </div>
+    </div>
+  </section>
+  <!-- search -->
+  <section id="search" class="py-5">
+    <div class="container ">
+      <form class="row" id='sreachForm'>
+        <div class="col-md-6">
+          <input id="searchName" type="text" class="form-control bg-transparent" placeholder="Search By Name">
+        </div>
+        <div class="col-md-6">
+          <input id="searchLetter" type="text" maxlength="1" class="form-control bg-transparent"
+            placeholder="Search By First Letter">
+        </div>
+      </form>
+      <div id="mealsShow" class="row meals position-relative  gy-4">
+        <div class="inner-spinner ">
+          <span class="loader"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- area -->
+  <section id="area" class="py-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-3">
+          <div class="rounded-3 area text-center ">
+            <i class="fa-solid fa-house-laptop icon-home mb-2"></i>
+            <h2>American</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--instructions  -->
+  <section id="instructions" class="py-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-3">
+          <div class="rounded-3 area text-center ">
+            <i class="fa-solid fa-drumstick-bite icon-home mb-2"></i>
+            <h2>chicken</h2>
+            <p>The chicken is a type of domesticated fowl, a subspecies of the red junglefowl (Gallus gallus). It is one
+              of</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="py-5 vh-100 d-flex justify-content-center align-items-center d-none">
+    <div class="container">
+      <form class="row gy-4">
+        <div class="col-md-6">
+          <input id="userName" type="text" class="form-control mb-3" placeholder="Enter Your Name">
+          <p id="nameErr" class="alert alert-danger mb-1 text-center ">
+            Special characters and numbers not allowed
+          </p>
+        </div>
+        <div class="col-md-6">
+          <input id="userEmail" type="email" class="form-control mb-3" placeholder="Enter Your Email">
+          <p id="emailErr" class="alert alert-danger mb-1 text-center">
+            Email not valid *exemple@yyy.zzz</p>
+        </div>
+        <div class="col-md-6">
+          <input id="userPhone" type="text" class="form-control mb-3" placeholder="Enter Your phone">
+          <p id="phoneErr" class="alert alert-danger mb-1 text-center">
+            Enter valid Phone Number
+          </p>
+        </div>
+        <div class="col-md-6">
+          <input id="userAge" type="number" class="form-control mb-3" placeholder="Enter Your Age">
+          <p id="ageErr" class="alert alert-danger mb-1 text-center">
+            Enter valid age
+          </p>
+        </div>
+        <div class="col-md-6">
+          <input id="userPassword" type="password" class="form-control mb-3" placeholder="Enter Your Password">
+          <p id="passwordErr" class="alert alert-danger mb-1 text-center">
+            Enter valid password *Minimum eight characters, at least one letter and one number:*
+          </p>
+        </div>
+        <div class="col-md-6">
+          <input id="repassword" type="password" class="form-control mb-3" placeholder="Repassword">
+          <p id="repasswordErr" class="alert alert-danger mb-1 text-center">
+            Enter valid repassword </p>
+        </div>
+        <div class=" d-flex justify-content-center">
+          <button id="submitBtn" type="button" class="btn btn-outline-danger  px-4 py-2 " disabled> submit</button>
+
+        </div>
+      </form>
+    </div>
+  </section>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script type="module" src="js/index.js"></script>
+</body>
+
+</html>
